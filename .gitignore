@@ -28,3 +28,4 @@ Thumbs.db
 # Package manager lock files (optional - some prefer to keep these)
 package-lock.json
 yarn.lock
+node_modules/
