@@ -1,5 +1,6 @@
 {
-  "buildCommand": "echo 'No build needed for static site'",
+  "version": 2,
+  "buildCommand": "cd "Source Code/Code" && npm run build",
   "outputDirectory": "Source Code/Code",
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
@@ -36,22 +37,23 @@
   "trailingSlash": false,
   "builds": [
     {
-      "src": "**/*",
-      "use": "@vercel/static"
+      "src": "Source Code/Code/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Source Code/Code"
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
     {
       "src": "/about",
       "dest": "/about.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "devCommand": "cd "Source Code/Code" && npm run dev",
+  "installCommand": "cd "Source Code/Code" && npm install"
 }
