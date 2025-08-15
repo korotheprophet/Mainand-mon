@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd 'Website/Source Code/Code' && npm install && npm run build",
+  "outputDirectory": "Website/Source Code/Code/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
